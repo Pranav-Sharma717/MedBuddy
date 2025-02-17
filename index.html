@@ -5,79 +5,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedBuddy_CareCircle</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #add8e6;
+            background-color: #d0e7f9;
             margin: 0;
             padding: 0;
         }
 
-        .header {
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
-            background-color: #ffffff;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .header h1 {
-            margin: 0;
-            color: #0077b6;
-        }
-
-        .login-btn {
-            text-decoration: none;
-            padding: 10px 15px;
-            background-color: #0077b6;
+            background-color: #1e3a5f;
             color: white;
+            padding: 10px 20px;
+        }
+
+        .search-bar input {
+            padding: 5px;
+            border: none;
             border-radius: 5px;
+        }
+
+        .profile-menu button,
+        .post-btn {
+            background-color: #1e3a5f;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .profile-menu button:hover,
+        .post-btn:hover {
+            background-color: #3a5f8f;
         }
 
         .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background: white;
+            width: 60%;
+            margin: auto;
             padding: 20px;
+        }
+
+        .post-box {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            padding: 15px;
             border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
 
-        textarea {
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .file-input {
+        .feed .post {
+            background: white;
             margin-top: 10px;
-        }
-
-        .post-btn {
-            margin-top: 15px;
-            padding: 10px 15px;
-            background-color: #0077b6;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 
 <body>
-    <div class="header">
+    <header>
         <h1>MedBuddy_CareCircle</h1>
-        <a href="#" class="login-btn">Login</a>
-    </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>🔍</button>
+        </div>
+        <div class="profile-menu">
+            <button>Profile Settings</button>
+            <button>Login</button>
+        </div>
+    </header>
+
     <div class="container">
-        <h2>Create a Post</h2>
-        <textarea placeholder="Write something..."></textarea>
-        <input type="file" class="file-input">
-        <button class="post-btn">Post</button>
+        <div class="post-box">
+            <textarea placeholder="Write a post..."></textarea>
+            <input type="file">
+            <button class="post-btn">Post</button>
+        </div>
+
+        <div class="feed">
+            <div class="post">
+                <h3>User1</h3>
+                <p>This is a sample post.</p>
+            </div>
+            <div class="post">
+                <h3>User2</h3>
+                <p>Feeling great today!</p>
+            </div>
+        </div>
     </div>
 </body>
 
