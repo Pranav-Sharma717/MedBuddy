@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MedBuddy_CareCircle</title>
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/11.3.1/firebase-app-compat.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/11.3.1/firebase-auth-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-database-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-functions-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-messaging-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-storage-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-analytics-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-remote-config-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-performance-compat.js"></script>
+  <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+</head>
+<script src="main.js"></script>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #d0e7f9;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e3a5f;
+    color: white;
+    padding: 10px 20px;
+
+    a:visited {
+      color: #0077b6;
+
+    }
+
+    a:active {
+      color: #0077b6;
+    }
+  }
+
+  .search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 50px;
+  }
+
+  .profile-menu button,
+  .post-btn {
+    background-color: #1e3a5f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background 0.3s;
+  }
+
+  .profile-menu button:hover,
+  .post-btn:hover {
+    background-color: #3a5f8f;
+  }
+
+  .container {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .post-box {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .feed .post {
+    background: white;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <a href="#" style="text-decoration: none;">
+      <h1>MedBuddy_CareCircle</h1>
+    </a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <button>🔍</button>
+    </div>
+    <div class="profile-menu">
+      <a href="profile.html"><button>Profile Settings</button></a>
+      <a href="login.html"><button>Login</button></a>
+    </div>
+  </header>
+  <div class="container">
+    <div class="post-box">
+      <textarea placeholder="Write a post..."></textarea>
+      <input type="file">
+      <button class="post-btn">Post</button>
+    </div>
+
+    <div class="feed">
+      <div class="post">
+        <h3>User1</h3>
+        <p>This is a sample post.</p>
+      </div>
+      <div class="post">
+        <h3>User2</h3>
+        <p>Feeling great today!</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
