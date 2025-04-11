@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medication Reminder</title>
+    <link rel="stylesheet" href="./reminderStyle.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Medication Reminder System</h1>
+        <form id="reminderForm">
+            <label for="medication">Medication Name:</label>
+            <input type="text" id="medication" name="medication" required><br><br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br><br>
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required><br><br>
+            <button type="submit">Set Reminder</button>
+        </form>
+        <audio id="reminderSound" src="notification.mp3" preload="auto" loop></audio>
+    </div>
+    <script>
+        document.getElementById('reminderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const medication = document.getElementById('medication').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const reminderDateTime = new Date(`${date}T${time}`);
+            const now = new Date();
+
+            if (reminderDateTime > now) {
+                const timeout = reminderDateTime.getTime() - now.getTime();
+                setTimeout(() => {
+                    const sound = document.getElementById('reminderSound');
+                    sound.play().catch(error => {
+                        console.log('Autoplay prevented:', error);
+                        alert('Please enable sound for notifications.');
+                    });
+                }, timeout);
+                alert('Reminder set successfully!');
+            } else {
+                alert('Please select a future date and time.');
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                const sound = document.getElementById('reminderSound');
+                sound.pause();
+                sound.currentTime = 0;
+            }
+        });
+    </script>
+</body>
+</html>
